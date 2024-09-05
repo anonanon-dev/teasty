@@ -1,0 +1,80 @@
+-cmd
+-cd folder place
+-npm create vite or npx create-react-app (project name)
+- npm i or npm install
+- npm run dev or npm start
+- from vs source contrl for github
+-disord for code ``` then enter then code then enter then ``` then send
+* react router dom install
+*
+0 & 0 = 0
+1 & 0 = 0
+0 & 1 = 0
+1 & 1 = 1
+
+
+0 | 0 = 0
+1 | 0 = 1
+0 | 1 = 1
+1 | 1 = 1
+
+
+short circute 
+
+false && (reject Whole sentence is false) = false
+
+True ||  (reject Whole sentence is false) = true
+*
+true && (return the second part becasue first is true in and sentence) = (second part)
+
+
+flase || (return the second part becasue frist is dalse in or sentence) = (second part)
+*
+*npm i react-icons
+*npm install @reduxjs/toolkit react-redux
+*npm install -D sass
+*strong password regex
+*npm install swiper
+*npm i for new clone 
+*npm install react-bootstrap bootstrap
+*import 'bootstrap/dist/css/bootstrap.min.css';
+https://react-bootstrap.netlify.app/
+*npm install --save animate.css-react
+npm install --save animate.css
+npm i animate.css-react
+*primereact
+*mui react
+حل مشاكل الرفع اول مره 
+git config --global http.postBuffer 524288000
+-
+git remote -v
+-
+git remote set-url origin git@bitbucket.org:cems-it/tasty_front_new.git
+-
+git fsck
+-
+git repack -a -d
+-
+دي متعملتش قبل كده 
+-
+# Check if SSH key exists
+ls ~/.ssh/id_rsa.pub
+# Add SSH key to Bitbucket
+cat ~/.ssh/id_rsa.pub
+-
+اخرها هنا 
+git remote -v
+-
+ssh -T git@bitbucket.org
+-
+git remote -v
+-
+git remote set-url origin https://bitbucket.org/cems-it/tasty_front_new.git
+-
+git remote -v
+-
+git credential-cache exit
+-
+git push origin main
+-
+نهايه حل مشكلة الرفع كامله

@@ -1,0 +1,302 @@
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&family=Narnoor:wght@400;500;600;700;800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+.signupheading {
+  text-align: center;
+  margin-top: 7rem;
+  margin-bottom: 6.5rem;
+
+  & svg {
+    display: inline-block;
+    text-align: center;
+  }
+
+  & h2 {
+    background-image: url('/line5.png');
+    font-size: 5.5rem;
+    line-height: 69.13px;
+    letter-spacing: -0.16500000655651093px;
+    text-align: center;
+    // background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    // width: 255px;
+    font-weight: 400;
+    margin: auto;
+    text-transform: uppercase;
+  }
+}
+
+.appForms {
+  display: flex;
+  flex-direction: column;
+  background: var(--color-white);
+  border-radius: 1.5rem;
+  padding: 4rem 3rem;
+  width: 45% !important;
+  margin: auto;
+  position: relative;
+  margin-bottom: 10rem;
+  margin-top: 5rem;
+  height: 72.1rem;
+
+  & form {
+    position: relative;
+    padding: 0rem 10rem;
+
+    & label {
+      position: relative;
+    }
+  }
+  & input {
+    border: 1px solid #dadada;
+    color: #f5570b;
+    border-radius: 1rem;
+    padding: 2rem;
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 16.8px;
+    margin: 1rem 0;
+    width: 100%;
+  }
+  & button {
+    border: 1px solid #dadada;
+    color: #f5570b;
+    border-radius: 1rem;
+    padding: 2rem;
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 16.8px;
+    margin: 2rem 0;
+    width: 100%;
+  }
+
+  ::placeholder {
+    color: #979797;
+  }
+
+  :focus {
+    outline: none;
+    border: 1px solid #f5570b;
+  }
+  :focus::placeholder {
+    color: #f5570b;
+  }
+  :focus + svg.svgPath path {
+    fill: var(--secondary-color);
+  }
+  :focus + svg.svgPathStroke path {
+    stroke: var(--secondary-color);
+  }
+  :focus + svg ellipse,
+  :focus + svg circle {
+    stroke: var(--secondary-color);
+  }
+
+  & form svg {
+    position: absolute;
+    top: -0.5rem;
+    right: 1.5rem;
+  }
+  & button {
+    background: #f5570b;
+    color: var(--color-white);
+  }
+}
+.or {
+  font-size: 1.4rem;
+  line-height: 24px;
+  text-align: center;
+  color: #091b3d;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+.signupwith {
+  font-size: 1.2rem;
+  line-height: 1.44rem;
+  color: #091b3d;
+  font-family: 'Narnoor', serif;
+  font-weight: 400;
+  font-style: normal;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.signupwithmethodes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  & a {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 1.3rem;
+    line-height: 2.4rem;
+    text-decoration: none;
+    color: #091b3d;
+    display: flex;
+    align-items: center;
+    background-color: rgba(245, 181, 68, 0.1);
+    border-radius: 2rem;
+    padding: 1rem 2rem;
+    margin: 0 1rem;
+  }
+  :focus {
+    border: none;
+    outline: none;
+  }
+  & img {
+    display: flex;
+    width: 2rem;
+    margin: 0 0.5rem;
+  }
+}
+.newsignin {
+  font-family: 'Narnoor', serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.2rem;
+  line-height: 1.44rem;
+  text-align: center;
+  color: rgba(31, 49, 75, 1);
+  margin-top: 2rem;
+
+  & a {
+    font-family: 'Narnoor', serif;
+    // font-style: normal;
+    font-size: 1.2rem;
+    font-weight: 700;
+    line-height: 14.4px;
+    text-align: center;
+    color: rgba(245, 87, 11, 1);
+    text-decoration: none;
+  }
+}
+.strongCheck {
+  position: absolute;
+  top: 0rem;
+  right: 4.5rem;
+}
+.lockIcon {
+  color: red;
+  font-size: 20px;
+}
+
+.strongCheck span {
+  font-size: 1.4rem;
+  margin-top: -0.5rem;
+  display: inline-block;
+}
+.passwordStrength1 {
+  color: red;
+}
+.passwordStrength2 {
+  color: yellow;
+}
+.passwordStrength3 {
+  color: rgba(56, 203, 137, 1);
+}
+.svgPath strock {
+  fill: red;
+}
+@media (max-width: 767px) {
+  .appForms {
+    width: 95% !important;
+    height: 82.8rem;
+
+    & form {
+      padding: 0 5rem;
+    }
+    & form svg {
+      width: 15px;
+      height: 15px;
+    }
+  }
+}
+// styles for log in page & form
+.forgetPass {
+  color: var(--secondary-color);
+  display: flex;
+  align-items: center;
+  padding: 0 2rem;
+}
+.newLogIn {
+  font-family: 'Narnoor', serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.2rem;
+  line-height: 1.44rem;
+  text-align: center;
+  color: rgba(31, 49, 75, 1);
+  margin-top: auto;
+  margin-bottom: 0;
+
+  & a {
+    font-family: 'Narnoor', serif;
+    // font-style: normal;
+    font-size: 1.2rem;
+    font-weight: 700;
+    line-height: 14.4px;
+    text-align: center;
+    color: rgba(245, 87, 11, 1);
+    text-decoration: none;
+  }
+}
+// forget pass styles
+.phoneSvg {
+  padding-top: 3rem;
+
+  & svg {
+    position: unset;
+    margin: 1.5rem auto;
+    width: 100% !important;
+  }
+}
+.forgetPassInput {
+  margin: 3rem auto 5rem auto !important;
+}
+// styles for verify page
+.verifyBtn {
+  color: rgba(191, 191, 191, 1) !important;
+  border: 1px solid rgba(217, 217, 217, 1);
+  background: rgba(248, 248, 248, 1) !important;
+}
+.verifyPhone {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.verifyPhone input {
+  width: 6.3rem;
+  height: 6.3rem;
+  border-radius: 1rem;
+  text-align: center;
+}
+.clockSvg {
+  padding-top: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+
+  & svg {
+    position: unset !important;
+    width: 100% !important;
+  }
+}
+.clockSpan {
+  color: red;
+}
+// resetpass page
+.resetPassInput {
+  margin: 5rem auto 1rem auto !important;
+}
+// reset pass rep styles
+.resetPassRepForm {
+  margin-top: 3rem;
+}
+.resetPassRepSubmit {
+  margin-top: 7rem !important;
+}

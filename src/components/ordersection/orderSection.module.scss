@@ -1,0 +1,267 @@
+.mainSection {
+  background-image: url(/public/klipartz3.png);
+  background-repeat: no-repeat;
+  background-position-x: center;
+  & svg {
+    width: 100%;
+    @media (max-width: 767px) {
+      height: auto;
+    }
+  }
+  & .FSvg & .SSvg {
+    display: block;
+    justify-content: end;
+    align-items: end;
+    height: fit-content;
+    margin-top: auto;
+    margin-bottom: 0;
+  }
+  & .FSvg svg,
+  & .SSvg svg {
+    margin-top: 0;
+    margin-bottom: auto;
+    justify-content: end;
+    align-items: end;
+  }
+}
+.signupheading {
+  text-align: center;
+  margin-top: 7rem;
+  margin-bottom: 6.5rem;
+
+  & svg {
+    display: inline-block;
+    text-align: center;
+  }
+
+  & h2 {
+    background-image: url('/line5.png');
+    font-size: 5.5rem;
+    line-height: 69.13px;
+    letter-spacing: -0.16500000655651093px;
+    text-align: center;
+    // background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    // width: 255px;
+    font-weight: 400;
+    margin: auto;
+    text-transform: uppercase;
+    padding: 0 12%;
+    @media (max-width: 767px) {
+      font-size: 3.5rem;
+      padding: 0;
+      line-height: unset;
+    }
+  }
+  & span {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 22.62px;
+    letter-spacing: -0.16500000655651093px;
+    text-align: center;
+    color: rgba(244, 109, 59, 1);
+    text-transform: uppercase;
+    @media (max-width: 767px) {
+      font-size: 15px;
+    }
+  }
+}
+.signupheading {
+  @media (max-width: 767px) {
+    margin-top: 1rem;
+  }
+  & p {
+    font-family: 'Red Hat Display', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21.3px;
+    letter-spacing: -0.16500000655651093px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.6);
+    padding: 0 34%;
+
+    @media (max-width: 767px) {
+      padding: 0 1rem;
+    }
+  }
+}
+.storesPics {
+  margin-bottom: 4rem;
+}
+//
+.mainSliderTitle {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  color: var(--color-white);
+  & h3 {
+    font-size: 65px;
+    font-weight: 400;
+    line-height: 81.69px;
+    letter-spacing: -0.16500000655651093px;
+    text-align: left;
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+
+    @media (max-width: 767px) {
+      font-size: 30px;
+      line-height: unset;
+      flex-direction: row;
+    }
+
+    & span {
+      font-size: 65px;
+      font-weight: 400;
+      line-height: 81.69px;
+      letter-spacing: -0.16500000655651093px;
+      text-align: left;
+
+      @media (max-width: 767px) {
+        font-size: 30px;
+        line-height: unset;
+      }
+    }
+  }
+  & ~ p {
+    text-align: start;
+    color: rgba(255, 255, 255, 0.6);
+    font-family: 'Red Hat Display', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18.52px;
+    letter-spacing: -0.1650000066px;
+    margin-bottom: 4rem;
+  }
+}
+.locationsSec {
+  padding-top: 20rem;
+  padding-bottom: 5rem;
+  background: var(--primary-color);
+}
+.secondSlider {
+  padding: 0 23%;
+}
+.secondDesc {
+  background-image: url(/MaskGroup.png);
+  width: 90%;
+  //   height: 100%;
+  background-repeat: round;
+  background-size: 100%;
+  //   background: red;
+  position: relative;
+  padding: 3.5rem;
+  z-index: 2;
+  overflow: hidden;
+  border-radius: 1.5rem;
+  &:after {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      180deg,
+      rgba(161, 58, 57, 0.88) 0%,
+      rgba(174, 87, 55, 0.88) 100%
+    );
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: -1;
+    overflow: hidden;
+    @media (max-width: 767px) {
+      .secondDesc {
+        &:after {
+          display: block !important;
+        }
+      }
+    }
+  }
+  & h5 {
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 35.19px;
+    letter-spacing: -0.16500000655651093px;
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 5rem;
+    margin-bottom: 6rem;
+  }
+  & span {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 22.62px;
+    letter-spacing: 2px;
+    text-align: start;
+    text-transform: uppercase;
+  }
+  & button {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 17.6px;
+    letter-spacing: -0.16500000655651093px;
+    text-align: center;
+    color: var(--primary-color);
+    background: var(--color-white);
+    display: block;
+    width: 100%;
+    border-radius: 5px;
+    margin-top: 4rem;
+    margin-bottom: 0;
+    padding: 2rem 0;
+  }
+}
+.thirdDesc {
+  background-image: url(/MaskGroup.png);
+  width: 90%;
+  //   height: 100%;
+  background-repeat: round;
+  background-size: 100%;
+  //   background: red;
+  position: relative;
+  padding: 3.5rem;
+  z-index: 2;
+  overflow: hidden;
+  border-radius: 1.5rem;
+
+  @media (max-width: 767px) {
+    margin-top: 5rem;
+    height: 270px;
+  }
+}
+@media (max-width: 1024px) {
+  ::after,
+  ::before,
+  ._afterContent_16qfl_200,
+  ._beforeContent_16qfl_207 {
+    display: block !important;
+  }
+}
+
+@media (max-width: 1024px) {
+  ::after,
+  ::before,
+  ._afterContent_1g89l_200,
+  ._beforeContent_1g89l_207 {
+    display: block !important;
+  }
+}
+@media (max-width: 1024px) {
+  ::after,
+  ::before,
+  ._afterContent_2moxf_200,
+  ._beforeContent_2moxf_207 {
+    display: block !important;
+  }
+}
+@media (max-width: 1024px) {
+  ::after,
+  ::before,
+  ._afterContent_1498q_200,
+  ._beforeContent_1498q_207 {
+    display: block !important;
+  }
+}

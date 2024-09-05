@@ -1,0 +1,13 @@
+.topnav {
+  display: flex;
+  gap: 1.3rem;
+  padding: 2rem 0;
+}
+.topnav a {
+  color: var(--color-white);
+}
+@media (max-width: 767px) {
+  .topnav {
+    display: none;
+  }
+}

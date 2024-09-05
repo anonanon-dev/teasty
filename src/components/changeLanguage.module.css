@@ -1,0 +1,57 @@
+.changeLang {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.changeLangTwo {
+  position: relative;
+}
+.changeLang ul {
+  position: absolute;
+  list-style: none;
+  background-color: var(--color-white);
+  color: var(--primary-color);
+  right: 0;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  /* top: 7rem; */
+  bottom: -1rem;
+}
+.changeLang ul li {
+  padding: 1rem 3rem;
+  transition: background 0.2s;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+.changeLang ul li:hover {
+  background: radial-gradient(50% 50% at 50% 50%, #d94108 0%, #bb4042 100%);
+  color: var(--color-white);
+}
+.changeLangTwo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.changeLang svg {
+  display: inline-block;
+  width: 1.7rem;
+  height: 1.7rem;
+  margin: 0 0.5rem;
+}
+@media (max-width: 767px) {
+  .changeLang {
+    padding: 3rem 0;
+  }
+  .changeLang ul {
+    bottom: unset;
+    top: 5.5rem;
+    right: 0;
+    left: 0;
+  }
+  .changeLang ul li {
+    margin: 0;
+    padding: 1rem 0;
+    text-align: center;
+  }
+}

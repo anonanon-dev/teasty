@@ -1,0 +1,98 @@
+.ServingSectionDiv {
+  background: var(--primary-color);
+  height: auto;
+  padding: 5rem 0 10rem 0;
+  & .servingInfo {
+    background: var(--color-white);
+    text-align: start;
+    padding: 7rem;
+    border-radius: 1.5rem;
+    height: fit-content;
+    width: 700px;
+    @media (max-width: 767px) {
+      width: 100%;
+      padding-bottom: 15rem;
+    }
+    & h3 {
+      font-size: 55px;
+      font-weight: 400;
+      line-height: 69.13px;
+      letter-spacing: -0.16500000655651093px;
+      color: var(--primary-color);
+      text-transform: uppercase;
+      @media (max-width: 767px) {
+        font-size: 25px;
+        line-height: unset;
+      }
+
+      & span {
+        color: var(--secondary-color);
+      }
+    }
+    & h4 {
+      color: var(--secondary-color);
+      font-size: 45px;
+      font-weight: 400;
+      line-height: 56.56px;
+      letter-spacing: -0.16500000655651093px;
+      @media (max-width: 767px) {
+        font-size: 20px;
+        line-height: unset;
+      }
+    }
+    & h5 {
+      font-size: 25px;
+      font-weight: 400;
+      line-height: 31.42px;
+      letter-spacing: -0.16500000655651093px;
+      color: var(--primary-color);
+      text-transform: uppercase;
+      @media (max-width: 767px) {
+        font-size: 12px;
+        line-height: unset;
+      }
+    }
+    & button {
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 17.6px;
+      letter-spacing: -0.1650000066px;
+      text-align: center;
+      border-radius: 5px;
+      padding: 2rem 3rem;
+      padding-right: 4rem;
+      background: var(--primary-color);
+      color: var(--color-white);
+
+      & svg {
+        margin: 0 5px;
+      }
+    }
+    & .mrDiv {
+      margin: 3rem 0 6rem 0;
+    }
+  }
+  & .foodPic {
+    background: var(--color-white);
+    height: 479px;
+    position: relative;
+    border-radius: 1.5rem;
+    transform: translate(0%, 12%);
+    @media (max-width: 767px) {
+      transform: unset;
+      background: unset;
+      height: 10vh;
+    }
+
+    & img {
+      position: absolute;
+      top: -50%;
+      left: 20%;
+      @media (max-width: 767px) {
+        width: 50%;
+        position: unset;
+        transform: translate(35%, -71%);
+      }
+    }
+  }
+}

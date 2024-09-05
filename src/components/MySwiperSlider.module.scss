@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap');
+// <uniquifier>: Use a unique and descriptive class name
+// <weight>: Use a value from 300 to 900
+@media (min-width: 767px) {
+  .mainSwiperSlider {
+    background-image: url(/line6.png);
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: 4%;
+    padding: 2rem 0;
+    & .mainSliderTitle {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      color: var(--color-white);
+      & h3 {
+        font-size: 65px;
+        font-weight: 400;
+        line-height: 81.69px;
+        letter-spacing: -0.16500000655651093px;
+        text-transform: uppercase;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+
+        & span {
+          font-size: 120px;
+          font-weight: 400;
+          line-height: 150.82px;
+          letter-spacing: -0.16500000655651093px;
+          text-transform: uppercase;
+        }
+      }
+    }
+    & p {
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 21.3px;
+      letter-spacing: -0.16500000655651093px;
+      text-align: start;
+      color: rgba(255, 255, 255, 0.6);
+      font-family: 'Red Hat Display', sans-serif;
+      font-optical-sizing: auto;
+      font-style: normal;
+      padding-right: 23rem;
+    }
+  }
+}
