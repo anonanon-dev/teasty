@@ -44,6 +44,7 @@ function CartNav() {
       className={`${styles.cartIcons}`}
       onMouseEnter={() => setDroped(true)}
       onMouseLeave={() => setDroped(false)}
+      onClick={() => setDroped(false)}
       // onClick={toggleCartMenu}
     >
       <CartIcon />

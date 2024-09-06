@@ -113,30 +113,22 @@ video {
   padding-right: 3rem;
 }
 
-.css-ezppyz-MuiButtonBase-root-MuiRadio-root.Mui-checked {
-  /* color: var(--secondary-color) !important; */
+.MuiButtonBase-root.MuiRadio-root.Mui-checked {
+  color: var(--secondary-color) !important;
 }
-.css-ezppyz-MuiButtonBase-root-MuiRadio-root.Mui-checked
-  ~ .css-1edfpdg-MuiTypography-root
-  .svgDiv {
-  /* background: var(--secondary-color); */
+.MuiButtonBase-root.MuiRadio-root.Mui-checked ~ .MuiTypography-root .svgDiv {
+  background: var(--secondary-color);
 }
-.css-ezppyz-MuiButtonBase-root-MuiRadio-root
-  ~ .css-1edfpdg-MuiTypography-root
-  .svgDiv {
+.MuiButtonBase-root.MuiRadio-root ~ .MuiTypography-root .svgDiv {
   background: rgba(151, 151, 151, 1);
   padding: 1rem;
   border-radius: 5px;
   margin-right: 1rem;
 }
-.css-ezppyz-MuiButtonBase-root-MuiRadio-root.Mui-checked
-  ~ .css-1edfpdg-MuiTypography-root
-  h6 {
+.MuiButtonBase-root.MuiRadio-root.Mui-checked ~ .MuiTypography-root h6 {
   color: var(--secondary-color);
 }
-.css-ezppyz-MuiButtonBase-root-MuiRadio-root
-  ~ .css-1edfpdg-MuiTypography-root
-  h6 {
+.MuiButtonBase-root.MuiRadio-root ~ .MuiTypography-root h6 {
   color: rgba(151, 151, 151, 1);
   font-size: 16px;
   font-weight: 800;
@@ -145,9 +137,7 @@ video {
   text-transform: capitalize;
 }
 @media (max-width: 767px) {
-  .css-ezppyz-MuiButtonBase-root-MuiRadio-root
-    ~ .css-1edfpdg-MuiTypography-root
-    h6 {
+  .MuiButtonBase-root.MuiRadio-root ~ .MuiTypography-root h6 {
     font-size: 13px;
   }
   .frist-content {
@@ -158,16 +148,14 @@ video {
     margin: 1rem 0;
   }
 }
-.css-ezppyz-MuiButtonBase-root-MuiRadio-root
-  ~ .css-1edfpdg-MuiTypography-root
-  span {
+.MuiButtonBase-root.MuiRadio-root ~ .MuiTypography-root span {
   color: rgba(151, 151, 151, 1);
   font-size: 12px;
   font-weight: 600;
   line-height: 15.88px;
   letter-spacing: -0.16500000655651093px;
 }
-.css-tqkhgv-MuiFormGroup-root {
+.MuiFormGroup-root {
   margin: 4rem 0;
 }
 
@@ -178,65 +166,64 @@ video {
   padding: 0.7rem 2rem;
 }
 /* Default style when input is empty and placeholder is shown */
-.MuiInput-input.css-iyy83d:placeholder-shown
-  ~ .css-ki6l96-JoyInput-endDecorator {
+/* .MuiInput-input:placeholder-shown ~ .MuiInput-endDecorator {
   color: green !important;
-}
-.css-ki6l96-JoyInput-endDecorator {
+} */
+.MuiInput-endDecorator {
   color: rgba(151, 151, 151, 1) !important;
 }
 /* Style when input is not empty (placeholder is not shown) */
-.MuiInput-input:not(:placeholder-shown) ~ .css-ki6l96-JoyInput-endDecorator {
+.MuiInput-input:not(:placeholder-shown) ~ .MuiInput-endDecorator {
   color: rgba(244, 109, 59, 1) !important;
 }
 
-.css-1qeopm6-JoyInput-root:focus-within ~ .css-ki6l96-JoyInput-endDecorator {
+.MuiInput-input:focus-within ~ .MuiInput-endDecorator {
   color: rgba(244, 109, 59, 1) !important;
 }
-.css-1qeopm6-JoyInput-root:focus-within::before {
+.MuiInput-input:focus-within::before {
   --Input-focused: 0 !important;
 }
-.css-1qeopm6-JoyInput-root:focus-within::before {
+.MuiInput-input:focus-within::before {
   border: 1px solid rgba(244, 109, 59, 0.3) !important;
 }
-.css-20bmp1-MuiSvgIcon-root {
+.MuiSvgIcon-root {
   font-size: 2.5rem !important;
 }
-.css-1qeopm6-JoyInput-root,
-.css-lxfshk-MuiInputBase-root-MuiOutlinedInput-root,
-.css-1d3z3hw-MuiOutlinedInput-notchedOutline {
+.MuiInput-input,
+.MuiInputBase-root.MuiOutlinedInput-root,
+.MuiOutlinedInput.notchedOutline {
   border-radius: 10px !important;
   border-color: rgba(218, 218, 218, 1) !important;
   margin: 0.5rem 0;
 }
-.css-1qeopm6-JoyInput-root:has(.MuiInput-input:not(:placeholder-shown)) {
+.MuiInput-input:has(.MuiInput-input:not(:placeholder-shown)) {
   border-color: rgba(244, 109, 59, 0.2) !important;
 }
-.css-lc42l8-MuiInputBase-input-MuiOutlinedInput-input:not(:placeholder-shown)
-  ~ .css-1d3z3hw-MuiOutlinedInput-notchedOutline {
+.MuiInputBase-input.MuiOutlinedInput-input:not(:placeholder-shown)
+  ~ .MuiOutlinedInput.notchedOutline {
   border-color: rgba(244, 109, 59, 0.2) !important;
 }
 
-.css-10o2lyd-MuiStack-root > .MuiTextField-root {
+.MuiStack-root > .MuiTextField-root {
   width: 100%;
 }
-.css-1a7z5rc-MuiButtonBase-root-MuiIconButton-root {
+.MuiButtonBase-root.MuiIconButton-root {
   color: rgba(151, 151, 151, 1) !important;
   font-size: 1.4rem;
   font-weight: 400;
   line-height: 17.6px;
   letter-spacing: -0.1650000066px;
-  text-align: center;
+  /* text-align: center; */
   background: unset !important;
   border: 0;
   outline: 0;
   border-radius: 1rem;
   padding: 0.5rem 0;
-  width: 100%;
+  /* width: 100%; */
   text-transform: capitalize;
 }
-.css-lc42l8-MuiInputBase-input-MuiOutlinedInput-input,
-.css-18pjc51-MuiFormLabel-root-MuiInputLabel-root {
+.MuiInputBase-input.MuiOutlinedInput-input,
+.MuiFormLabel-root.MuiInputLabel-root {
   color: rgba(151, 151, 151, 1) !important;
   font-size: 14px !important;
 }
