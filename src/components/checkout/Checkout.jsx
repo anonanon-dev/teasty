@@ -92,7 +92,17 @@ const StyledLabel = styled('label')(({ theme }) => ({
   transition: 'all 150ms cubic-bezier(0.4, 0, 0.2, 1)',
   fontSize: '1.4rem',
 }));
-
+// custom styles
+export const MyFormControl = styled(FormControl)({
+  '& .MuiButtonBase-root.MuiRadio-root.Mui-checked ~ .MuiTypography-root .svgDiv':
+    {
+      background: ' var(--secondary-color)',
+    },
+  '& .MuiButtonBase-root.MuiRadio-root.Mui-checked ': {
+    color: 'var(--secondary-color) !important',
+  },
+});
+// end custom styles
 const InnerInput = React.forwardRef(function InnerInput(props, ref) {
   const id = React.useId();
   return (
@@ -202,7 +212,7 @@ function Checkout() {
               <div className={styles.contentSection}>
                 <div className='grid grid-cols-1 md:grid-cols-2 container  mx-auto gap-20 content-shape'>
                   <div className='flex flex-col frist-content'>
-                    <FormControl>
+                    <MyFormControl>
                       <FormLabel
                         id='demo-row-radio-buttons-group-label'
                         className={styles.radioLabel}
@@ -353,7 +363,7 @@ function Checkout() {
                           }
                         />
                       </RadioGroup>
-                    </FormControl>
+                    </MyFormControl>
                     <button className={styles.newaddress}>
                       + Add New Address
                     </button>
