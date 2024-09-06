@@ -21,6 +21,11 @@ import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
+// import { Box } from '@mui/material';
+
+// <Box sx={{ display: { xs: 'block', sm: 'none' } }}>
+//   This will only display on extra-small screens
+// </Box>;
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   '& .MuiDialogContent-root': {

@@ -119,7 +119,7 @@ video {
 .css-ezppyz-MuiButtonBase-root-MuiRadio-root.Mui-checked
   ~ .css-1edfpdg-MuiTypography-root
   .svgDiv {
-  background: var(--secondary-color);
+  background: var(--secondary-color) !important;
 }
 .css-ezppyz-MuiButtonBase-root-MuiRadio-root
   ~ .css-1edfpdg-MuiTypography-root
