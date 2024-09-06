@@ -39,12 +39,28 @@ function CartNav() {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
+  const handleClickCart = () => {
+    // Perform navigation
+    navigate('/cart');
+
+    // Update state
+    setDroped(false);
+  };
+
+  const handleClickCheckOut = () => {
+    // Perform navigation
+    navigate('/checkout');
+
+    // Update state
+    setDroped(false);
+  };
+
   return (
     <div
       className={`${styles.cartIcons}`}
       onMouseEnter={() => setDroped(true)}
       onMouseLeave={() => setDroped(false)}
-      onClick={() => setDroped(false)}
+
       // onClick={toggleCartMenu}
     >
       <CartIcon />
@@ -94,10 +110,7 @@ function CartNav() {
           </ul>
           {cartLength > 0 && (
             <div className={styles.cartBtns}>
-              <button
-                className={styles.cartBtn}
-                onClick={() => navigate('/cart')}
-              >
+              <button className={styles.cartBtn} onClick={handleClickCart}>
                 VIEW CART
                 <svg
                   width='20'
@@ -134,7 +147,7 @@ function CartNav() {
               </button>
               <button
                 className={styles.checkOutBtn}
-                onClick={() => navigate('/checkout')}
+                onClick={handleClickCheckOut}
               >
                 CHECKOUT
                 <svg
