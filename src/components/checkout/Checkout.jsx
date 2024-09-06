@@ -91,7 +91,7 @@ const StyledLabel = styled('label')(({ theme }) => ({
   transition: 'all 150ms cubic-bezier(0.4, 0, 0.2, 1)',
   fontSize: '1.4rem',
 }));
-
+import '../../styles/global.css';
 const InnerInput = React.forwardRef(function InnerInput(props, ref) {
   const id = React.useId();
   return (
