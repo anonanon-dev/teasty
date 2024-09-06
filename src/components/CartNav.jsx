@@ -10,7 +10,10 @@ import styles from './cartl.module.scss';
 import { useNavigate } from 'react-router-dom';
 
 function CartNav() {
-  const { user } = useSelector((store) => store.user);
+  // const { user } = useSelector((store) => store.user);
+  const user = useSelector((store) => store.user.user);
+  const cartItems = user ? user.cart.cartItems : [];
+
   const dispatch = useDispatch();
   const [droped, setDroped] = useState(false);
   const cartRef = useRef(null);
@@ -21,7 +24,7 @@ function CartNav() {
   function handleDelete(id) {
     dispatch(removeFromCart(id));
     // Close the cart menu after item deletion
-    setDroped(true);
+    setDroped(false);
   }
 
   // Close cart menu when clicking outside of it
@@ -52,14 +55,16 @@ function CartNav() {
         <div ref={cartRef} className={styles.cartMenu}>
           <ul>
             {cartLength > 0 ? (
-              user.cart.cartItems.map((item) => (
+              // user.cart.cartItems.map((item) => (
+              cartItems.map((item) => (
                 <li key={item.id}>
                   <div>
                     <div className={styles.imgDiv}>
-                      <img
+                      {/* <img
                         src={item.imageUrl || '/cardHover.jpg'}
                         alt={`Image of ${item.name}`}
-                      />
+                      /> */}
+                      <img src={item.img} alt={item.name} />
                     </div>
                     <div className={styles.cartPrice}>
                       <span className={styles.cartPriceName}>{item.name}</span>

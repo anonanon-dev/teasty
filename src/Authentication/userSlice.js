@@ -1,5 +1,4 @@
 import { createSlice } from '@reduxjs/toolkit';
-
 const fakeUser = {
   id: 1,
   name: 'sama',
@@ -99,10 +98,13 @@ const fakeUser = {
   ],
 };
 
+// import { createSlice } from '@reduxjs/toolkit';
+
 const initialState = {
   user: null,
   isAuthenticated: false,
 };
+
 const userSlice = createSlice({
   name: 'user',
   initialState: initialState,
@@ -120,19 +122,6 @@ const userSlice = createSlice({
       state.user = null;
       state.isAuthenticated = false;
     },
-    // addToCart(state, action) {
-    //   if (state.user) {
-    //     const existingItem = state.user.cart.cartItems.find(
-    //       (item) => item.id === action.payload.id
-    //     );
-    //     if (!existingItem) {
-    //       state.user.cart.cartItems = [
-    //         ...state.user.cart.cartItems,
-    //         action.payload,
-    //       ];
-    //     }
-    //   }
-    // },
     addToCart(state, action) {
       if (state.user) {
         const existingItem = state.user.cart.cartItems.find(
@@ -141,11 +130,14 @@ const userSlice = createSlice({
         if (existingItem) {
           existingItem.quantity += 1;
         } else {
-          state.user.cart.cartItems = [
-            ...state.user.cart.cartItems,
-            action.payload,
-          ];
+          state.user.cart.cartItems.push(action.payload);
         }
+        // else {
+        //   state.user.cart.cartItems = [
+        //     ...state.user.cart.cartItems,
+        //     action.payload,
+        //   ];
+        // }
       }
     },
     removeFromCart(state, action) {
@@ -155,12 +147,16 @@ const userSlice = createSlice({
         );
       }
     },
-
     addToFav(state, action) {
       if (state.user) {
-        state.user.favourites = [...state.user.favourites, action.payload];
+        state.user.favourites.push(action.payload);
       }
     },
+    // addToFav(state, action) {
+    //   if (state.user) {
+    //     state.user.favourites = [...state.user.favourites, action.payload];
+    //   }
+    // },
     removeFromFav(state, action) {
       if (state.user) {
         state.user.favourites = state.user.favourites.filter(
@@ -168,7 +164,6 @@ const userSlice = createSlice({
         );
       }
     },
-
     increaseQuantity(state, action) {
       if (state.user) {
         const item = state.user.cart.cartItems.find(
@@ -179,7 +174,6 @@ const userSlice = createSlice({
         }
       }
     },
-
     decreaseQuantity(state, action) {
       if (state.user) {
         const item = state.user.cart.cartItems.find(
@@ -192,14 +186,25 @@ const userSlice = createSlice({
     },
   },
 });
+
 export const {
   login,
   logout,
   addToCart,
-  addToFav,
   removeFromCart,
-  removeFromFav,
   increaseQuantity,
   decreaseQuantity,
+  addToFav,
+  removeFromFav,
 } = userSlice.actions;
+// export const {
+//   login,
+//   logout,
+//   addToCart,
+//   addToFav,
+//   removeFromCart,
+//   removeFromFav,
+//   increaseQuantity,
+//   decreaseQuantity,
+// } = userSlice.actions;
 export default userSlice.reducer;

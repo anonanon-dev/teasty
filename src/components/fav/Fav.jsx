@@ -14,14 +14,38 @@ function Fav() {
 
   //   const {cart} = user
 
-  function handleDelete(id) {
-    dispatch(removeFromFav(id));
-  }
+  // fav page
+  // Access the user's favourites from the Redux store
+  // const user = useSelector((state) => state.user.user);
+  // const menu = fakeMenu;
 
+  // end fav page
+
+  // fav page
+
+  // Function to handle adding an item to the cart
   const handleAddToCart = (item) => {
-    dispatch(addToCart(item));
+    // Add the item to the cart (ensure item has required properties)
+    dispatch(
+      addToCart({
+        ...item,
+        quantity: 1, // Initialize quantity as 1 if not already present
+      })
+    );
   };
 
+  // Function to handle removing an item from favorites
+  const handleToggleFavorite = (item) => {
+    dispatch(removeFromFav(item.id));
+  };
+
+  // function handleDelete(id) {
+  //   dispatch(removeFromFav(id));
+  // }
+
+  // const handleAddToCart = (item) => {
+  //   dispatch(addToCart(item));
+  // };
   return (
     <div>
       <Animated
@@ -53,7 +77,7 @@ function Fav() {
               <div className='grid grid-cols-2 md:grid-cols-4 gap-4 container-xl mx-auto'>
                 {favourites.map((item) => (
                   <div key={item.id} className={styles.favouriteItem}>
-                    <button onClick={() => handleDelete(item.id)}>
+                    <button onClick={() => handleToggleFavorite(item)}>
                       <svg
                         width='120'
                         height='54'
@@ -217,5 +241,4 @@ function Fav() {
     </div>
   );
 }
-
 export default Fav;

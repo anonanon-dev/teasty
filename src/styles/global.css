@@ -434,6 +434,9 @@ video {
     height: auto;
     width: 50vw;
   }
+  .main-swiper-slider .swiper {
+    height: 65vh;
+  }
 }
 
 /* end swiper */
@@ -467,6 +470,9 @@ video {
   position: absolute;
   top: 10%;
   left: -10%;
+}
+.carttable-tbody-img {
+  width: 10vw;
 }
 @media (max-width: 767px) {
   .third-one-div img,

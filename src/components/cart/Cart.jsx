@@ -10,40 +10,45 @@ import { Animated } from 'react-animated-css';
 import styles from './cart.module.scss';
 
 function Cart() {
-  const { cartItems, discount } = useSelector((store) => store.user.user.cart);
+  const user = useSelector((store) => store.user.user);
+  const cartItems = user ? user.cart.cartItems : [];
+  const discount = user ? user.cart.discount : 0;
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [coupon, setCoupon] = useState('');
+  // const { cartItems, discount } = useSelector((store) => store.user.user.cart);
   const subTotal = cartItems.reduce(
     (acc, item) => acc + item.price * item.quantity,
     0
   );
 
-  //   const {cart} = user
+  // Debugging
+  console.log('Cart Items:', cartItems);
+  console.log('Discount:', discount);
 
-  //   const user = useSelector((state) => state.user.user);
-
-  //   if (!user || !user.cart) {
-  //     return <div>No cart available. Please log in or add items to your cart.</div>;
-  //   }
-
-  //   const cartItems = user.cart.cartItems || [];
-  //   const discount = user.cart.discount || 0;
-
-  //   const subTotal = cartItems.reduce(
-  //     (acc, item) => acc + item.price * item.quantity,
-  //     0
-  //   );
-
-  function handleDelete(id) {
+  const handleDelete = (id) => {
+    console.log('Removing Item with ID:', id); // Debugging
     dispatch(removeFromCart(id));
-  }
-  function handleIncrease(id) {
+  };
+
+  const handleIncrease = (id) => {
+    console.log('Increasing Quantity for Item with ID:', id); // Debugging
     dispatch(increaseQuantity(id));
-  }
-  function handleDecrease(id) {
+  };
+
+  const handleDecrease = (id) => {
+    console.log('Decreasing Quantity for Item with ID:', id); // Debugging
     dispatch(decreaseQuantity(id));
-  }
+  };
+  // function handleDelete(id) {
+  //   dispatch(removeFromCart(id));
+  // }
+  // function handleIncrease(id) {
+  //   dispatch(increaseQuantity(id));
+  // }
+  // function handleDecrease(id) {
+  //   dispatch(decreaseQuantity(id));
+  // }
 
   return (
     <div>
@@ -141,13 +146,17 @@ function Cart() {
                         <td className={styles.mainTD}>
                           <div className={styles.gredientDiv}>
                             <div>
-                              <img src={item.img} alt={item.name} />
+                              <img
+                                className='carttable-tbody-img'
+                                src={item.img}
+                                alt={item.name}
+                              />
                             </div>
                             <div>
                               <span className={styles.itemName}>
                                 {item.name}
                               </span>
-                              <ul>
+                              {/* <ul>
                                 {item.ingredient.map((ing, index) => (
                                   <li key={index}>
                                     <svg
@@ -167,6 +176,13 @@ function Cart() {
                                     {ing}
                                   </li>
                                 ))}
+                              </ul> */}
+
+                              <ul>
+                                {item.ingredient &&
+                                  item.ingredient.map((ing, index) => (
+                                    <li key={index}>{ing}</li>
+                                  ))}
                               </ul>
                             </div>
                           </div>
@@ -176,9 +192,13 @@ function Cart() {
                             <div className={styles.afterContent}></div>
                             <div className={styles.prSpans}>
                               <span>$</span>
-                              <span>{item.price}</span>
+                              <span>
+                                {/* {item.price} */}
+                                {item.price.toFixed(2)}
+                              </span>
                               <span className={styles.pDisc}>
-                                {item.discount + item.price}
+                                {/* {item.discount + item.price} */}
+                                {(item.price - item.discount).toFixed(2)}
                               </span>
                             </div>
                             <div className={styles.beforeContent}></div>
@@ -201,7 +221,8 @@ function Cart() {
 
                             <div className={styles.sTSpans}>
                               <span>$</span>
-                              {item.price * item.quantity}
+                              {/* {item.price * item.quantity} */}
+                              {(item.price * item.quantity).toFixed(2)}
                             </div>
                           </div>
                         </td>
@@ -227,14 +248,20 @@ function Cart() {
                   <div className={styles.hrDiv}>
                     <hr />
                   </div>
-                  <div className={styles.lchDiv}>{subTotal}</div>
+                  <div className={styles.lchDiv}>
+                    {/* {subTotal} */}
+                    {subTotal.toFixed(2)}
+                  </div>
                 </div>
                 <div className={styles.pageST}>
                   <div className={styles.fchDiv}>coupon code</div>
                   <div className={styles.hrDiv}>
                     <hr />
                   </div>
-                  <div className={styles.lchDiv}>{discount}</div>
+                  <div className={styles.lchDiv}>
+                    {/* {discount} */}
+                    {discount.toFixed(2)}
+                  </div>
                 </div>
                 <div className={styles.pageST}>
                   <div className={styles.fchDiv}>total</div>
@@ -242,7 +269,11 @@ function Cart() {
                     <hr />
                   </div>
                   <div className={styles.lchDiv}>
-                    {subTotal - discount <= 0 ? 0 : subTotal - discount}
+                    {/* {subTotal - discount <= 0 ? 0 : subTotal - discount} */}
+                    {(subTotal - discount <= 0
+                      ? 0
+                      : subTotal - discount
+                    ).toFixed(2)}
                   </div>
                 </div>
                 <button onClick={() => navigate('/checkout')}>

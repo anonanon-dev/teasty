@@ -19,77 +19,246 @@ import { useDispatch } from 'react-redux';
 import { addToCart } from '../../Authentication/userSlice';
 // import styles from './fav.module.scss';
 import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 // end fav page
-
+const fakeMenu = [
+  {
+    id: 1,
+    category: 'burger',
+    plates: [
+      {
+        id: 100,
+        img: '/menuImg1.png',
+        name: 'Porterhouse Steak',
+        price: 10.99,
+        discount: 2,
+        ingredient: ['1 STEAK', 'BREAD', 'rosemary', 'Garlic', 'potato'],
+      },
+      {
+        id: 101,
+        img: '/menuImg1.png',
+        name: 'Porterhouse Steak',
+        price: 12.99,
+        discount: 1,
+        ingredient: ['1 STEAK', 'BREAD', 'rosemary', 'Garlic', 'potato'],
+      },
+      {
+        id: 102,
+        img: '/menuImg1.png',
+        name: 'Porterhouse Steak',
+        price: 12.99,
+        discount: 1,
+        ingredient: ['1 STEAK', 'BREAD', 'rosemary', 'Garlic', 'potato'],
+      },
+      {
+        id: 103,
+        img: '/menuImg1.png',
+        name: 'Porterhouse Steak',
+        price: 12.99,
+        discount: 1,
+        ingredient: ['1 STEAK', 'BREAD', 'rosemary', 'Garlic', 'potato'],
+      },
+      {
+        id: 104,
+        img: '/menuImg1.png',
+        name: 'Porterhouse Steak',
+        price: 12.99,
+        discount: 1,
+        ingredient: ['1 STEAK', 'BREAD', 'rosemary', 'Garlic', 'potato'],
+      },
+      {
+        id: 105,
+        img: '/menuImg1.png',
+        name: 'Porterhouse Steak',
+        price: 12.99,
+        discount: 1,
+        ingredient: ['1 STEAK', 'BREAD', 'rosemary', 'Garlic', 'potato'],
+      },
+      {
+        id: 106,
+        img: '/menuImg1.png',
+        name: 'Porterhouse Steak',
+        price: 12.99,
+        discount: 1,
+        ingredient: ['1 STEAK', 'BREAD', 'rosemary', 'Garlic', 'potato'],
+      },
+    ],
+  },
+  {
+    id: 2,
+    category: 'pizza',
+    plates: [
+      {
+        id: 107,
+        img: '/menuImg1.png',
+        name: 'pizza',
+        price: 10.99,
+        discount: 2,
+        ingredient: ['meat', 'onion', 'potato'],
+      },
+      {
+        id: 108,
+        img: '/menuImg1.png',
+        name: 'pizza',
+        price: 12.99,
+        discount: 1,
+        ingredient: ['meat', 'onion', 'potato'],
+      },
+      {
+        id: 109,
+        img: '/menuImg1.png',
+        name: 'pizza',
+        price: 12.99,
+        discount: 1,
+        ingredient: ['meat', 'onion', 'potato'],
+      },
+      {
+        id: 110,
+        img: '/menuImg1.png',
+        name: 'pizza',
+        price: 12.99,
+        discount: 1,
+        ingredient: ['meat', 'onion', 'potato'],
+      },
+      {
+        id: 111,
+        img: '/menuImg1.png',
+        name: 'pizza',
+        price: 12.99,
+        discount: 1,
+        ingredient: ['meat', 'onion', 'potato'],
+      },
+      {
+        id: 112,
+        img: '/menuImg1.png',
+        name: 'pizza',
+        price: 12.99,
+        discount: 1,
+        ingredient: ['meat', 'onion', 'potato'],
+      },
+      {
+        id: 113,
+        img: '/menuImg1.png',
+        name: 'pizza',
+        price: 12.99,
+        discount: 1,
+        ingredient: ['meat', 'onion', 'potato'],
+      },
+    ],
+  },
+  {
+    id: 3,
+    category: 'steaks',
+    plates: [
+      {
+        id: 100,
+        img: '/image3.png',
+        name: 'Porterhouse Steak',
+        price: 10.99,
+        discount: 2,
+        ingredient: ['1 STEAK', 'BREAD', 'rosemary', 'Garlic', 'potato'],
+      },
+      {
+        id: 101,
+        img: '/image4.png',
+        name: 'Porterhouse Steak',
+        price: 12.99,
+        discount: 1,
+        ingredient: ['1 STEAK', 'BREAD', 'rosemary', 'Garlic', 'potato'],
+      },
+      {
+        id: 102,
+        img: '/menuImg1.png',
+        name: 'Porterhouse Steak',
+        price: 12.99,
+        discount: 1,
+        ingredient: ['1 STEAK', 'BREAD', 'rosemary', 'Garlic', 'potato'],
+      },
+      {
+        id: 103,
+        img: '/image3.png',
+        name: 'Porterhouse Steak',
+        price: 12.99,
+        discount: 1,
+        ingredient: ['1 STEAK', 'BREAD', 'rosemary', 'Garlic', 'potato'],
+      },
+      {
+        id: 104,
+        img: '/image4.png',
+        name: 'Porterhouse Steak',
+        price: 12.99,
+        discount: 1,
+        ingredient: ['1 STEAK', 'BREAD', 'rosemary', 'Garlic', 'potato'],
+      },
+      {
+        id: 105,
+        img: '/menuImg1.png',
+        name: 'Porterhouse Steak',
+        price: 12.99,
+        discount: 1,
+        ingredient: ['1 STEAK', 'BREAD', 'rosemary', 'Garlic', 'potato'],
+      },
+      {
+        id: 106,
+        img: '/image3.png',
+        name: 'Porterhouse Steak',
+        price: 12.99,
+        discount: 1,
+        ingredient: ['1 STEAK', 'BREAD', 'rosemary', 'Garlic', 'potato'],
+      },
+    ],
+  },
+  {
+    id: 4,
+    category: 'fried checken',
+    plates: [],
+  },
+  {
+    id: 5,
+    category: 'grilled cheken',
+    plates: [],
+  },
+];
 export default function SliderTwo() {
+  const menu = fakeMenu;
+
   // fav page
   // Access the user's favourites from the Redux store
   // const user = useSelector((state) => state.user.user);
-  const favourites = [
-    {
-      id: 513,
-      name: 'cheese burger',
-      img: '/image4.png',
-      price: 11.99,
-      discount: 2,
-      quantity: 3,
-    },
-    {
-      id: 514,
-      name: 'SEA FOOD RANCH PIZZA',
-      img: '/image4.png',
-      price: 11.99,
-      discount: 2,
-      quantity: 3,
-    },
-    {
-      id: 515,
-      name: 'cheese burger',
-      img: '/image3.png',
-      price: 11.99,
-      discount: 2,
-      quantity: 3,
-    },
-    {
-      id: 516,
-      name: 'cheese burger',
-      img: '/image4.png',
-      price: 11.99,
-      discount: 2,
-      quantity: 3,
-    },
-    {
-      id: 517,
-      name: 'cheese burger',
-      img: '/image4.png',
-      price: 11.99,
-      discount: 2,
-      quantity: 3,
-    },
-    {
-      id: 518,
-      name: 'cheese burger',
-      img: '/image4.png',
-      price: 11.99,
-      discount: 2,
-      quantity: 3,
-    },
-  ];
+  // const menu = fakeMenu;
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const [currentCat, setCurrentCat] = useState(3);
+
+  const currentCategory = menu.find((cat) => cat.id === currentCat);
 
   // end fav page
 
   // fav page
 
-  const handleAddToCart = (item) => {
-    dispatch(addToCart(item));
+  function handleAddToCart(plat) {
+    const cartItem = {
+      id: plat.id,
+      name: plat.name,
+      img: plat.img,
+      price: plat.price,
+      discount: plat.discount,
+      quantity: 1,
+      ingredient: plat.ingredient,
+    };
+    dispatch(addToCart(cartItem));
+  }
+  const handleCategoryClick = (id) => {
+    setCurrentCat(id);
+    navigate(`/category/${id}`);
   };
-
   // end fav page
   return (
     <>
+      <button className={styles.viewAllBtn} onClick={handleCategoryClick}>
+        view all
+      </button>
       <div className='containerSliderTwo'>
         <div className='sliderTwo grid grid-cols-1 md:grid-cols-4 place-items-center items-center justify-items-center'>
           <div className={styles.secondSlider}>
@@ -185,32 +354,32 @@ export default function SliderTwo() {
               },
             }}
           >
-            {favourites.map((item) => (
+            {currentCategory?.plates.map((plat) => (
               <>
-                <SwiperSlide key={item.id}>
+                <SwiperSlide key={plat.id}>
                   <div className={styles.favouriteItem}>
                     <div className='fav-item'>
                       <img
-                        src={item.img}
-                        alt={item.name}
+                        src={plat.img}
+                        alt={plat.name}
                         className={styles.favouriteItemImage}
                       />
                       <div className='favourite-item-details'>
                         <h2 className={styles.favouriteItemName}>
-                          {item.name}
+                          {plat.name}
                         </h2>
 
                         <span className={styles.cartPrice}>
-                          {item.price.toFixed(2)}
+                          {plat.price.toFixed(2)}
                           <span className={styles.priceDiscount}>
-                            {(item.price - item.discount).toFixed(2)}
+                            {(plat.price - plat.discount).toFixed(2)}
                           </span>
                         </span>
                       </div>
                       <div className={styles.cartBtns}>
                         <button
                           className={styles.cartBtn}
-                          onClick={() => handleAddToCart(item)}
+                          onClick={() => handleAddToCart(plat)}
                         >
                           ADD TO CART
                           <svg
