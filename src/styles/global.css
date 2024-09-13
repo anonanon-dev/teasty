@@ -485,5 +485,8 @@ html[dir='rtl'] .sliderTwo .swiper-container {
 html[dir='rtl'] .sliderTwo .swiper-wrapper {
   direction: ltr; /* Fixes direction issues with swiper-wrapper */
 }
+html[dir='rtl'] .sliderTwo .swiper-slide {
+  direction: rtl; /* Fixes direction issues with swiper-wrapper */
+}
 
 /* Add any additional RTL-specific styles if needed */
