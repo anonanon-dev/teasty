@@ -467,3 +467,23 @@ video {
     width: 100%;
   }
 }
+/* styles.css */
+[dir='ltr'] {
+  /* LTR styles */
+  text-align: left;
+}
+
+[dir='rtl'] {
+  /* RTL styles */
+  text-align: right;
+}
+/* styles.css */
+html[dir='rtl'] .sliderTwo .swiper-container {
+  direction: ltr; /* Ensures swiper respects RTL direction */
+}
+
+html[dir='rtl'] .sliderTwo .swiper-wrapper {
+  direction: ltr; /* Fixes direction issues with swiper-wrapper */
+}
+
+/* Add any additional RTL-specific styles if needed */

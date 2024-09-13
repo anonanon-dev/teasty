@@ -1,0 +1,22 @@
+ npm install @reduxjs/toolkit
+npm install react-redux
+# npm
+$ npm install i18next --save
+npm install react-i18next i18next
+
+# yarn
+$ yarn add i18next
+
+*mui
+npm install @mui/material @emotion/react @emotion/styled
+npm install @mui/material @mui/styled-engine-sc styled-components
+npm install @mui/icons-material
+
+* joy ui 
+npm install @mui/joy @emotion/react @emotion/styled
+
+*local هنحط فيه التعريب بتاعنا هنحط فيه الحاجات الستاسيك عشان نفصلها من الي هيجي من الباك 
+*star for all requesta and state management 
+
+*react helmet install
+npm install --save react-helmet
